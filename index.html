@@ -345,10 +345,32 @@ void main() {
 </nav>
 <div class="flex items-center gap-unit">
 <button class="magnetic-btn px-gutter py-2 rounded-full bg-primary text-on-primary font-bold uppercase tracking-widest text-[14px]">Let's Talk</button>
-<span class="material-symbols-outlined md:hidden text-on-surface text-3xl">menu</span>
+<button id="menuBtn" class="md:hidden">
+    <span class="material-symbols-outlined text-on-surface text-3xl">
+        menu
+    </span>
+</button>
 </div>
 </div>
 </header>
+<div id="mobileMenu"
+class="hidden md:hidden fixed top-[72px] left-0 w-full bg-[#0d0d0d] border-t border-white/10 z-50">
+
+<div class="flex flex-col p-6 gap-5 uppercase tracking-widest">
+
+<a href="#">Home</a>
+
+<a href="#services">Services</a>
+
+<a href="#portfolio">Portfolio</a>
+
+<a href="#process">Process</a>
+
+<a href="#contact">Contact</a>
+
+</div>
+
+</div>
 <main>
 <section class="relative h-screen flex items-center justify-center overflow-hidden pt-20">
 <!-- STITCH_THREEJS_START:ANIMATION_12 class="absolute inset-0 w-full h-full -z-10" -->
