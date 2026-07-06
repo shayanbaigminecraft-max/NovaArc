@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NOVAARC | Premium Creative Agency</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&amp;family=Plus+Jakarta+Sans:wght@400;500&amp;family=Geist:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#201f1f",
+                        "on-secondary-fixed-variant": "#004395",
+                        "secondary-container": "#0566d9",
+                        "on-error": "#690005",
+                        "tertiary": "#c6c6c7",
+                        "inverse-primary": "#6d3bd7",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "outline": "#958ea0",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-primary-fixed-variant": "#5516be",
+                        "primary-container": "#a078ff",
+                        "secondary-fixed-dim": "#adc6ff",
+                        "on-secondary-fixed": "#001a42",
+                        "secondary": "#adc6ff",
+                        "tertiary-container": "#909191",
+                        "tertiary-fixed": "#e2e2e2",
+                        "on-tertiary-container": "#282a2a",
+                        "surface-bright": "#3a3939",
+                        "surface-variant": "#353534",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "error-container": "#93000a",
+                        "surface-dim": "#131313",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "on-primary-container": "#340080",
+                        "primary": "#d0bcff",
+                        "secondary-fixed": "#d8e2ff",
+                        "on-secondary": "#002e6a",
+                        "surface-container-high": "#2a2a2a",
+                        "on-error-container": "#ffdad6",
+                        "on-background": "#e5e2e1",
+                        "on-tertiary": "#2f3131",
+                        "primary-fixed-dim": "#d0bcff",
+                        "on-surface-variant": "#cbc3d7",
+                        "outline-variant": "#494454",
+                        "on-primary-fixed": "#23005c",
+                        "surface-tint": "#d0bcff",
+                        "error": "#ffb4ab",
+                        "primary-fixed": "#e9ddff",
+                        "background": "#131313",
+                        "inverse-surface": "#e5e2e1",
+                        "surface-container-highest": "#353534",
+                        "on-primary": "#3c0091",
+                        "surface": "#131313",
+                        "inverse-on-surface": "#313030",
+                        "on-surface": "#e5e2e1",
+                        "surface-container-low": "#1c1b1b",
+                        "on-secondary-container": "#e6ecff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "32px",
+                        "unit": "8px",
+                        "container-max": "1440px",
+                        "margin-desktop": "80px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Syne"],
+                        "label-mono": ["Geist"],
+                        "headline-lg": ["Syne"],
+                        "display-xl": ["Syne"],
+                        "body-md": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["32px", {"lineHeight": "38px", "fontWeight": "700"}],
+                        "label-mono": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                        "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "display-xl": ["84px", {"lineHeight": "90px", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #131313;
+            color: #e5e2e1;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(208, 188, 255, 0.3);
+            transform: translateY(-10px);
+        }
+
+        .gradient-border {
+            position: relative;
+        }
+
+        .gradient-border::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            padding: 1px;
+            background: linear-gradient(to bottom right, rgba(255,255,255,0.2), rgba(255,255,255,0.02));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+
+        .magnetic-btn {
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .custom-cursor {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #d0bcff;
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: width 0.3s, height 0.3s, background-color 0.3s;
+            mix-blend-mode: difference;
+        }
+
+        .cursor-hover {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(208, 188, 255, 0.2);
+        }
+
+        .timeline-line {
+            background: linear-gradient(to bottom, transparent, #d0bcff, transparent);
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md">
+<div class="custom-cursor hidden md:block" id="cursor"></div>
+<!-- STITCH_SHADER_START:ANIMATION_11 class="fixed inset-0 w-full h-full -z-10 opacity-30 pointer-events-none" -->
+<div class="fixed inset-0 w-full h-full -z-10 opacity-30 pointer-events-none" style="display:block;">
+<canvas id="shader-canvas-ANIMATION_11" style="display:block;width:100%;height:100%"></canvas>
+<script>
+(function() {
+  const canvas = document.getElementById('shader-canvas-ANIMATION_11');
+
+  // Sync the WebGL drawing-buffer size with the CSS-driven layout size.
+  // This fires on initial layout and whenever the element is resized.
+  function syncSize() {
+    const w = canvas.clientWidth  || 1280;
+    const h = canvas.clientHeight || 720;
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width  = w;
+      canvas.height = h;
+    }
+  }
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(syncSize).observe(canvas);
+  }
+  syncSize();
+
+  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+  if (!gl) return;
+  const vs = `attribute vec2 a_position;
+varying vec2 v_texCoord;
+void main() {
+  v_texCoord = a_position * 0.5 + 0.5;
+  gl_Position = vec4(a_position, 0.0, 1.0);
+}`;
+  const fs = `precision highp float;
+uniform float u_time;
+uniform vec2 u_resolution;
+uniform vec2 u_mouse;
+varying vec2 v_texCoord;
+
+void main() {
+    vec2 uv = v_texCoord;
+    vec2 mouse = u_mouse / u_resolution;
+    
+    // Create fluid motion based on time and mouse position
+    float time = u_time * 0.2;
+    vec2 p = uv * 2.0 - 1.0;
+    p.x *= u_resolution.x / u_resolution.y;
+    
+    float dist = length(p - (mouse * 2.0 - 1.0));
+    float wave = sin(dist * 10.0 - time * 5.0) * 0.5 + 0.5;
+    
+    // Brand colors: Purple (#8b5cf6) and Blue (#3b82f6)
+    vec3 color1 = vec3(0.545, 0.361, 0.965); // Purple
+    vec3 color2 = vec3(0.231, 0.510, 0.965); // Blue
+    vec3 background = vec3(0.04, 0.04, 0.04); // Deep Black
+    
+    vec3 finalColor = mix(background, color1, 0.1 * wave / (dist + 0.5));
+    finalColor = mix(finalColor, color2, 0.05 * sin(uv.y * 5.0 + time));
+    
+    gl_FragColor = vec4(finalColor, 1.0);
+}`;
+  function cs(type, src) {
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    return s;
+  }
+  const prog = gl.createProgram();
+  gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
+  gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
+  gl.linkProgram(prog);
+  gl.useProgram(prog);
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+  const pos = gl.getAttribLocation(prog, 'a_position');
+  gl.enableVertexAttribArray(pos);
+  gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+  const uTime = gl.getUniformLocation(prog, 'u_time');
+  const uRes = gl.getUniformLocation(prog, 'u_resolution');
+  const uMouse = gl.getUniformLocation(prog, 'u_mouse');
+
+  // u_mouse is in pixel coordinates matching u_resolution (ShaderToy convention).
+  // Shaders that need normalized coords should use: u_mouse / u_resolution.
+  let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+  window.addEventListener('mousemove', (event) => {
+    const rect = canvas.getBoundingClientRect();
+    if (rect.width && rect.height) {
+      const nx = (event.clientX - rect.left) / rect.width;
+      const ny = 1.0 - (event.clientY - rect.top) / rect.height;
+      mouse.x = nx * canvas.width;
+      mouse.y = ny * canvas.height;
+    }
+  });
+
+  function render(t) {
+    if (typeof ResizeObserver === 'undefined') syncSize();
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    if (uTime) gl.uniform1f(uTime, t * 0.001);
+    if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
+    if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    requestAnimationFrame(render);
+  }
+  render(0);
+})();
+</script>
+</div>
+<!-- STITCH_SHADER_END:ANIMATION_11 -->
+<header class="fixed top-0 w-full z-50 bg-white/5 backdrop-blur-xl border-b border-white/10 shadow-none">
+<div class="flex justify-between items-center px-margin-desktop py-unit max-w-container-max mx-auto">
+<span class="font-display-xl text-headline-lg-mobile text-on-surface tracking-tighter">NOVAARC</span>
+<nav class="hidden md:flex gap-gutter font-body-md text-body-md uppercase tracking-widest">
+<a class="text-primary font-bold border-b-2 border-primary pb-1 hover:text-primary transition-all duration-500 ease-out" href="#">Home</a>
+<a class="text-on-surface/70 hover:text-primary transition-all duration-500 ease-out" href="#services">Services</a>
+<a class="text-on-surface/70 hover:text-primary transition-all duration-500 ease-out" href="#portfolio">Portfolio</a>
+<a class="text-on-surface/70 hover:text-primary transition-all duration-500 ease-out" href="#process">Process</a>
+<!-- <a class="text-on-surface/70 hover:text-primary transition-all duration-500 ease-out" href="#about">About</a> -->
+<a class="text-on-surface/70 hover:text-primary transition-all duration-500 ease-out" href="#contact">Contact</a>
+</nav>
+<div class="flex items-center gap-unit">
+<button class="magnetic-btn px-gutter py-2 rounded-full bg-primary text-on-primary font-bold uppercase tracking-widest text-[14px]">Let's Talk</button>
+<span class="material-symbols-outlined md:hidden text-on-surface text-3xl">menu</span>
+</div>
+</div>
+</header>
+<main>
+<section class="relative h-screen flex items-center justify-center overflow-hidden pt-20">
+<!-- STITCH_THREEJS_START:ANIMATION_12 class="absolute inset-0 w-full h-full -z-10" -->
+<div class="absolute inset-0 w-full h-full -z-10" style="display:block;">
+<script src="https://ajax.googleapis.com/ajax/libs/threejs/r125/three.min.js"></script>
+<div id="threejs-container-ANIMATION_12" style="width:100%;height:100%"></div>
+<script>
+(function() {
+  const container = document.getElementById('threejs-container-ANIMATION_12');
+  const devicePixelRatio = window.devicePixelRatio || 1;
+  const width = container.clientWidth || window.innerWidth;
+const height = container.clientHeight || window.innerHeight;
+
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+
+renderer.setSize(width, height);
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+container.appendChild(renderer.domElement);
+
+// Abstract geometric mesh representing "Creative Impact"
+const geometry = new THREE.IcosahedronGeometry(1.5, 4);
+const material = new THREE.MeshPhongMaterial({
+    color: 0x8b5cf6, // Brand Purple
+    wireframe: true,
+    transparent: true,
+    opacity: 0.6,
+    shininess: 100
+});
+const mesh = new THREE.Mesh(geometry, material);
+scene.add(mesh);
+
+// Lighting
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+scene.add(ambientLight);
+const pointLight = new THREE.PointLight(0x3b82f6, 2); // Brand Blue
+pointLight.position.set(5, 5, 5);
+scene.add(pointLight);
+
+camera.position.z = 4;
+
+// Mouse Tracking
+let mouseX = 0;
+let mouseY = 0;
+window.addEventListener('mousemove', (event) => {
+    mouseX = (event.clientX / window.innerWidth) * 2 - 1;
+    mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
+});
+
+function animate() {
+    requestAnimationFrame(animate);
+    
+    mesh.rotation.x += 0.005;
+    mesh.rotation.y += 0.005;
+    
+    // Smooth follow
+    mesh.position.x += (mouseX * 0.5 - mesh.position.x) * 0.05;
+    mesh.position.y += (mouseY * 0.5 - mesh.position.y) * 0.05;
+    
+    renderer.render(scene, camera);
+}
+
+window.addEventListener('resize', () => {
+    const w = container.clientWidth || window.innerWidth;
+    const h = container.clientHeight || window.innerHeight;
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+    renderer.setSize(w, h);
+});
+
+animate();
+})();
+</script>
+</div>
+<!-- STITCH_THREEJS_END:ANIMATION_12 -->
+<div class="max-w-4xl text-center px-margin-mobile z-10">
+<h1 class="font-display-xl text-[64px] md:text-display-xl text-on-surface leading-tight mb-gutter uppercase reveal-on-scroll">
+                    Turning Ideas <br/> Into <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Impactful</span> Visuals
+                </h1>
+<p class="text-on-surface-variant text-xl md:text-2xl mb-12 max-w-2xl mx-auto reveal-on-scroll" style="transition-delay: 0.2s;">
+                    We create premium Graphic Design, Video Editing, Motion Graphics, Video Production and AI Content solutions.
+                </p>
+<div class="flex flex-col md:flex-row gap-gutter justify-center reveal-on-scroll" style="transition-delay: 0.4s;">
+<a class="magnetic-btn px-10 py-5 rounded-full bg-gradient-to-r from-primary-container to-secondary-container text-on-primary-container font-bold uppercase tracking-widest shadow-[0_0_20px_rgba(160,120,255,0.4)]" href="#portfolio">
+                        View Portfolio
+                    </a>
+<a class="magnetic-btn px-10 py-5 rounded-full glass-card border border-white/20 font-bold uppercase tracking-widest" href="https://wa.me/03312359748">
+                        WhatsApp
+                    </a>
+</div>
+</div>
+</section>
+<section class="py-[160px] px-margin-desktop max-w-container-max mx-auto" id="services">
+<div class="flex flex-col md:flex-row justify-between items-end mb-[80px]">
+<div class="max-w-xl">
+<span class="font-label-mono text-primary uppercase tracking-[0.4em] block mb-unit">Capabilities</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">Precision Craftsmanship <br/> For The Digital Era</h2>
+</div>
+<div class="text-on-surface/50 max-w-sm hidden md:block">
+                    Elevating brands through a blend of technical mastery and visionary creative thinking.
+                </div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-unit">
+<div class="glass-card gradient-border p- gutter rounded-xl flex flex-col items-center text-center p-8 reveal-on-scroll">
+<div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-gutter">
+<span class="material-symbols-outlined text-primary text-3xl">brush</span>
+</div>
+<h3 class="font-headline-lg-mobile text-xl mb-unit">Graphic Design</h3>
+<p class="text-on-surface-variant text-sm">Visual identities that resonate with premium audiences.</p>
+</div>
+<div class="glass-card gradient-border p- gutter rounded-xl flex flex-col items-center text-center p-8 reveal-on-scroll" style="transition-delay: 0.1s;">
+<div class="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center mb-gutter">
+<span class="material-symbols-outlined text-secondary text-3xl">movie_edit</span>
+</div>
+<h3 class="font-headline-lg-mobile text-xl mb-unit">Video Editing</h3>
+<p class="text-on-surface-variant text-sm">Cinematic storytelling that captures attention instantly.</p>
+</div>
+<div class="glass-card gradient-border p- gutter rounded-xl flex flex-col items-center text-center p-8 reveal-on-scroll" style="transition-delay: 0.2s;">
+<div class="w-16 h-16 rounded-full bg-primary-container/10 flex items-center justify-center mb-gutter">
+<span class="material-symbols-outlined text-primary-container text-3xl">animation</span>
+</div>
+<h3 class="font-headline-lg-mobile text-xl mb-unit">Motion Graphics</h3>
+<p class="text-on-surface-variant text-sm">Complex data and ideas brought to life via motion.</p>
+</div>
+<div class="glass-card gradient-border p- gutter rounded-xl flex flex-col items-center text-center p-8 reveal-on-scroll" style="transition-delay: 0.3s;">
+<div class="w-16 h-16 rounded-full bg-secondary-container/10 flex items-center justify-center mb-gutter">
+<span class="material-symbols-outlined text-secondary-container text-3xl">videocam</span>
+</div>
+<h3 class="font-headline-lg-mobile text-xl mb-unit">Video Production</h3>
+<p class="text-on-surface-variant text-sm">From concept to final frame, full-scale production.</p>
+</div>
+<div class="glass-card gradient-border p- gutter rounded-xl flex flex-col items-center text-center p-8 reveal-on-scroll" style="transition-delay: 0.4s;">
+<div class="w-16 h-16 rounded-full bg-tertiary/10 flex items-center justify-center mb-gutter">
+<span class="material-symbols-outlined text-tertiary text-3xl">psychology</span>
+</div>
+<h3 class="font-headline-lg-mobile text-xl mb-unit">AI Content</h3>
+<p class="text-on-surface-variant text-sm">The cutting edge of generative art and automation.</p>
+</div>
+</div>
+</section>
+<section class="py-[160px] bg-surface-dim" id="portfolio">
+<div class="px-margin-desktop max-w-container-max mx-auto mb-[80px]">
+<span class="font-label-mono text-secondary uppercase tracking-[0.4em] block mb-unit">Selected Work</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">Impactful Visual Stories</h2>
+</div>
+<div class="columns-1 md:columns-2 lg:columns-3 gap-unit px-margin-desktop max-w-container-max mx-auto space-y-unit">
+<div class="relative group overflow-hidden rounded-xl glass-card gradient-border reveal-on-scroll">
+<img class="w-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYqlGYGduoG5IFPZ13Vj5c8HY_u4xCUHfbuGBKbfToI48lPYXDaNHZ5mPG8AgewCJbWW-o9AmYdYXwWZH3_F9pOwZfjeN7WO0QftgH7OYJm_i2HXAeflUrWgjjM2X6regKpTXrhaVxlddFzLsJHu9mjW4eAS9o0y3Jl3xfZUg2LPpgIYV-MYFtq-n6eAVJm2Gbut0XF1H58CLA-JxPZK7V0GzHbE6kD9sMU82fgB2R757Nwxyk8bKkv3VS_9RSMdF4ZQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-gutter">
+</div>
+</div>
+<div class="relative group overflow-hidden rounded-xl glass-card gradient-border reveal-on-scroll">
+<img class="w-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDAbKcT6aR4zUQ-_Ru-y9IKXoKlN2ov41rlK_tDQlJUPecH7LzK1DyfvaGRyXhVxe27WhvTuAMHdehk4g9n0KZ3ukI64_iPyeDkcnzrYCLjOXhfs9E_S81QZ_Wcd5CMycCUgnYLdlBG878aOeusGrJ_wAnD1hNdw1AAzzL3K3AF2yUyqTR_UoZNwck5S6jfY_i4AiyaoiXrAk0WGTQsRk-Lx341s9jEImx6jffBE0uL-X-89AilamIgwdhtQLfJY8e7A"/>
+</div>
+<div class="relative group overflow-hidden rounded-xl glass-card gradient-border reveal-on-scroll">
+<img class="w-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsqp0uO4od6xJVlAe1BMs5zgb8evdOj37Jr5r7zZ3yU46fJXxWkgsr_Ue_HLKqyOJY1G6pJUh4XHdNvUvJCMKOzKnsyyqOO4t3UHAY36ccrkxytqR49RxowiDietP9KeViwYugBFC6Bfc8p85v6L8nsAa7h6BboEXqOs6TMIgJSVbzIs-2SZ9EwQmxdEIrsUWdp6Q-HK0zqHhsSaj4pUuQJFdtt6vOQxNXILHmSyuuP5dV1U55jIhdqRWK0p-jkaSDEQ"/>
+</div>
+<div class="relative group overflow-hidden rounded-xl glass-card gradient-border reveal-on-scroll">
+<img class="w-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCq61r02IbbItClwSGxfShAadUmTaCtaqEOExSY2nZqO4OmNv7GYUJe29MQizWipcPdaJRVa8a0jnluyZCEImLOed4w_5kJoxQXBZmm9UC5cakof0xaus-KMceS6zVPtiwhc111VJb8y4BuRdwsYpeCCcv1ECiKYn19aapWpMm4RJmru_hlKzkQfa40_GjJYEdT-o2su-fbQkV2215qOp9ksmmh-wznN7eqSiZ7--dSy4AVdldGvJ9rj9VmlQs1_vujsg"/>
+</div>
+<div class="relative group overflow-hidden rounded-xl glass-card gradient-border reveal-on-scroll">
+<img class="w-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8Wj6fa2WIaIC9-xsyei1RfZWZIOMK6V7kpIoXor0QEBXCQvIZvMySKQNeqnaRTW90UVxKqH8jpkv3B0UEQ5hN5-YanThHhqsTnLZDQER31ngQ3pEs0AVGcKToruqRjcj6h4cP_k6c0BQtIuqfrykJLmSBW9gDhkd1Q8oJ3izyWxkSZqJ2Nxzd3BDkuIJPj3CVzK8og6xmQTFxmBmZv68R9-q26tC84eHnfdNchJ7BgipagZ2V9Z82TWhbtikT-Z8ogg"/>
+</div>
+<div class="relative group overflow-hidden rounded-xl glass-card gradient-border reveal-on-scroll">
+<img class="w-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIqGtSLvyk_sKRCeyHpWwfvJCAQoneg3ZLd9Ujxw-SFclQItl_4RZtF95jfVlpWc0Vham_MoWE_UWkxntbL32H_7Ac8xTUCWhap49uqRd-_asvUWQi6OGLblti_yVdx6OqNp7ELMuzqB6rRS7CmkErKUTbouxCMQyBmbV5kciaHtSCxkR-e4ep77DVgsxmQ1yl4QpPMILaMxocMgdEUNgaHjyqQSiO_k7iLOi1uvgKUfInS8ofk1iJ6cC8TAycpe8H0Q"/>
+</div>
+<div class="relative group overflow-hidden rounded-xl glass-card gradient-border reveal-on-scroll">
+<img class="w-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAno6Cf7bLMUfjCenDTtpx3GomNzK9WzIEminSb2QTDYfUfx4inWCT841yt5JWzBymA67YrbJGlIVGYngFxB4TfDFV9LBLOZy0TsTYgDyzpiwori_6ZaORXv69TuemkwQG9qpuyKcCl4OK2ESIIQmrwU9lsUfEy3iQYqnS3YchpNm40u4_vio_nBw-uC2G_lhiy78iyeIwH27IljnvC3gvNILFvVvDu14vh9zdyOxGQNpfcI96w3KcA0AC2N2u71FvjzQ"/>
+</div>
+<div class="relative group overflow-hidden rounded-xl glass-card gradient-border reveal-on-scroll">
+<img class="w-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDL0S9qqCUmIdA47R4zdYg5rdq36yk5LLQARnajBGnskn6FgqMVZLj_9pMgBvmh8YEwqzSvEMxRUZDSHH70bCufkRtQXZUbfzCf2qd6FeB3VrYT-X_7lsQP-9_P344sqZWCV19ZVqZtSQr4jECgaZwYPbNyRlM-GPiKNL9N3XOovr02ihLGKukTlw4uvp7t2JxlH2c1MPuFItdSWs0aknjpBcdJRxfwg2uUQvEqR-mpTSsvSJGm1v96-ESLgzqQijYEAg"/>
+</div>
+<div class="relative group overflow-hidden rounded-xl glass-card gradient-border reveal-on-scroll">
+<img class="w-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwuQow0KW2k7SOJPZ88mH4NdnI_Hl_Oql_ah_2xQuZr3DOaPwBw4zv1hivJqzLf1VdvKMuehUjcQuCpc9_e1xoVQlbSDI7FS8dTCjfsWg_bntGKXL0h_qrYThuQZAtxAknsivddElNrWyc7gEvzl-U214IqxdlLmCvpvHtFZeLgkYbYDUp6gFwS8bbYEfTjbJ-lpqj63o3fnkTqrbjMbvtTrneEYeM843NjdEOSEBEFV7h74xFtEb-TZghIPqtRH0QFA"/>
+</div>
+</div>
+</section>
+<section class="py-[160px] px-margin-desktop max-w-container-max mx-auto relative overflow-hidden" id="process">
+<div class="mb-[80px] text-center">
+<span class="font-label-mono text-primary uppercase tracking-[0.4em] block mb-unit">Our Flow</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">Seamless Production</h2>
+</div>
+<div class="relative flex flex-col gap-gutter max-w-4xl mx-auto">
+<div class="absolute left-0 md:left-1/2 top-0 bottom-0 w-px timeline-line hidden md:block"></div>
+<div class="relative flex flex-col md:flex-row items-center gap-gutter reveal-on-scroll">
+<div class="md:w-1/2 md:text-right">
+<h4 class="font-headline-lg-mobile text-2xl text-primary">Discovery</h4>
+<p class="text-on-surface-variant">We dive deep into your brand identity and goals.</p>
+</div>
+<div class="w-12 h-12 rounded-full bg-primary border-4 border-background z-10 flex items-center justify-center shrink-0">
+<span class="text-background font-bold">01</span>
+</div>
+<div class="md:w-1/2"></div>
+</div>
+<div class="relative flex flex-col md:flex-row-reverse items-center gap-gutter reveal-on-scroll" style="transition-delay: 0.1s;">
+<div class="md:w-1/2 md:text-left">
+<h4 class="font-headline-lg-mobile text-2xl text-secondary">Planning</h4>
+<p class="text-on-surface-variant">Strategizing the visual narrative and technical approach.</p>
+</div>
+<div class="w-12 h-12 rounded-full bg-secondary border-4 border-background z-10 flex items-center justify-center shrink-0">
+<span class="text-background font-bold">02</span>
+</div>
+<div class="md:w-1/2"></div>
+</div>
+<div class="relative flex flex-col md:flex-row items-center gap-gutter reveal-on-scroll" style="transition-delay: 0.2s;">
+<div class="md:w-1/2 md:text-right">
+<h4 class="font-headline-lg-mobile text-2xl text-primary-container">Design</h4>
+<p class="text-on-surface-variant">Creating the core visual assets and aesthetic foundation.</p>
+</div>
+<div class="w-12 h-12 rounded-full bg-primary-container border-4 border-background z-10 flex items-center justify-center shrink-0">
+<span class="text-background font-bold">03</span>
+</div>
+<div class="md:w-1/2"></div>
+</div>
+<div class="relative flex flex-col md:flex-row-reverse items-center gap-gutter reveal-on-scroll" style="transition-delay: 0.3s;">
+<div class="md:w-1/2 md:text-left">
+<h4 class="font-headline-lg-mobile text-2xl text-secondary-container">Production</h4>
+<p class="text-on-surface-variant">Execution phase where motion and production come to life.</p>
+</div>
+<div class="w-12 h-12 rounded-full bg-secondary-container border-4 border-background z-10 flex items-center justify-center shrink-0">
+<span class="text-background font-bold">04</span>
+</div>
+<div class="md:w-1/2"></div>
+</div>
+<div class="relative flex flex-col md:flex-row items-center gap-gutter reveal-on-scroll" style="transition-delay: 0.4s;">
+<div class="md:w-1/2 md:text-right">
+<h4 class="font-headline-lg-mobile text-2xl text-tertiary">Delivery</h4>
+<p class="text-on-surface-variant">Final polish and delivery of premium, impact-ready assets.</p>
+</div>
+<div class="w-12 h-12 rounded-full bg-tertiary border-4 border-background z-10 flex items-center justify-center shrink-0">
+<span class="text-background font-bold">05</span>
+</div>
+<div class="md:w-1/2"></div>
+</div>
+</div>
+</section>
+<section class="py-[160px] bg-surface-container-low px-margin-desktop" id="why">
+<div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-[120px] items-center">
+<div class="reveal-on-scroll">
+<span class="font-label-mono text-primary uppercase tracking-[0.4em] block mb-unit">Why Us</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-gutter">The Aether <br/> Advantage</h2>
+<p class="text-on-surface-variant text-lg mb-12">We don't just create visuals; we engineer experiences that drive conversion and brand loyalty through technical precision.</p>
+<div class="flex flex-col gap-gutter">
+<div class="flex items-center gap-unit">
+<span class="material-symbols-outlined text-primary">auto_awesome</span>
+<span class="font-label-mono uppercase">Creative Solutions</span>
+</div>
+<div class="flex items-center gap-unit">
+<span class="material-symbols-outlined text-secondary">rocket_launch</span>
+<span class="font-label-mono uppercase">Fast Delivery</span>
+</div>
+<div class="flex items-center gap-unit">
+<span class="material-symbols-outlined text-primary-container">diamond</span>
+<span class="font-label-mono uppercase">Premium Quality</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-unit reveal-on-scroll" style="transition-delay: 0.3s;">
+<div class="glass-card gradient-border p-8 rounded-xl text-center">
+<div class="text-4xl font-display-xl text-primary mb-2">98%</div>
+<p class="text-on-surface-variant text-sm">Client Satisfaction</p>
+</div>
+<div class="glass-card gradient-border p-8 rounded-xl text-center mt-gutter">
+<div class="text-4xl font-display-xl text-secondary mb-2">250+</div>
+<p class="text-on-surface-variant text-sm">Projects Delivered</p>
+</div>
+<div class="glass-card gradient-border p-8 rounded-xl text-center">
+<div class="text-4xl font-display-xl text-primary-container mb-2">15+</div>
+<p class="text-on-surface-variant text-sm">Global Awards</p>
+</div>
+<div class="glass-card gradient-border p-8 rounded-xl text-center mt-gutter">
+<div class="text-4xl font-display-xl text-secondary-container mb-2">24/7</div>
+<p class="text-on-surface-variant text-sm">Expert Support</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-[80px] bg-surface-dim overflow-hidden" id="technologies">
+<div class="flex gap-margin-desktop items-center whitespace-nowrap animate-marquee">
+<span class="text-on-surface/20 font-display-xl uppercase text-4xl">Adobe Suite</span>
+<span class="text-on-surface/20 font-display-xl uppercase text-4xl">Figma</span>
+<span class="text-on-surface/20 font-display-xl uppercase text-4xl">CapCut</span>
+<span class="text-on-surface/20 font-display-xl uppercase text-4xl">Blender</span>
+<span class="text-on-surface/20 font-display-xl uppercase text-4xl">Midjourney</span>
+<span class="text-on-surface/20 font-display-xl uppercase text-4xl">After Effects</span>
+<span class="text-on-surface/20 font-display-xl uppercase text-4xl">Premiere Pro</span>
+<span class="text-on-surface/20 font-display-xl uppercase text-4xl">Photoshop</span>
+</div>
+<style>
+                @keyframes marquee {
+                    0% { transform: translateX(0); }
+                    100% { transform: translateX(-50%); }
+                }
+                .animate-marquee {
+                    display: flex;
+                    width: 200%;
+                    animation: marquee 20s linear infinite;
+                }
+            </style>
+</section>
+<section class="py-[160px] px-margin-desktop max-w-container-max mx-auto" id="testimonials">
+<div class="text-center mb-[80px]">
+<span class="font-label-mono text-tertiary uppercase tracking-[0.4em] block mb-unit">Voices</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">Client Collaborations</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="glass-card gradient-border p- gutter rounded-xl reveal-on-scroll">
+<p class="text-on-surface-variant italic mb-gutter">"Aether transformed our brand's digital presence. Their attention to detail in motion graphics is unmatched."</p>
+<div class="flex items-center gap-unit">
+<div class="w-10 h-10 rounded-full bg-surface-variant"></div>
+<div>
+<p class="font-bold text-on-surface">James Wilson</p>
+<p class="text-xs text-on-surface-variant">CEO, TechFlow</p>
+</div>
+</div>
+</div>
+<div class="glass-card gradient-border p- gutter rounded-xl reveal-on-scroll" style="transition-delay: 0.1s;">
+<p class="text-on-surface-variant italic mb-gutter">"The video production quality exceeded our wildest expectations. Truly a premium agency in every sense."</p>
+<div class="flex items-center gap-unit">
+<div class="w-10 h-10 rounded-full bg-surface-variant"></div>
+<div>
+<p class="font-bold text-on-surface">Sarah Chen</p>
+<p class="text-xs text-on-surface-variant">Marketing Director, Lumia</p>
+</div>
+</div>
+</div>
+<div class="glass-card gradient-border p- gutter rounded-xl reveal-on-scroll" style="transition-delay: 0.2s;">
+<p class="text-on-surface-variant italic mb-gutter">"Fast, reliable, and incredibly creative. They are now our go-to partners for all visual content."</p>
+<div class="flex items-center gap-unit">
+<div class="w-10 h-10 rounded-full bg-surface-variant"></div>
+<div>
+<p class="font-bold text-on-surface">Marcus Reed</p>
+<p class="text-xs text-on-surface-variant">Founder, Drift Creative</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-[160px] bg-surface-container-highest" id="contact">
+<div class="px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-gutter">Let's Build <br/> Something Great</h2>
+<div class="space-y-gutter mb-12">
+<div class="flex items-center gap-gutter group">
+<div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-background">phone</span>
+</div>
+<div>
+<p class="font-label-mono text-on-surface-variant uppercase text-xs">Call Us</p>
+<p class="text-xl font-bold">0331 2359748</p>
+</div>
+</div>
+<div class="flex items-center gap-gutter group">
+<div class="w-14 h-14 rounded-full bg-secondary/10 flex items-center justify-center group-hover:bg-secondary transition-colors">
+<span class="material-symbols-outlined text-secondary group-hover:text-background">location_on</span>
+</div>
+<div>
+<p class="font-label-mono text-on-surface-variant uppercase text-xs">Find Us</p>
+<p class="text-xl font-bold">Hyderabad, Sindh, Pakistan</p>
+</div>
+</div>
+</div>
+<a class="magnetic-btn inline-flex items-center gap-unit px-10 py-5 rounded-full bg-[#25D366] text-white font-bold uppercase tracking-widest" href="https://wa.me/03312359748">
+<span>Chat on WhatsApp</span>
+</a>
+</div>
+<div class="h-[400px] rounded-2xl overflow-hidden glass-card gradient-border">
+<iframe frameborder="0" height="100%" marginheight="0" marginwidth="0" scrolling="no" src="https://maps.google.com/maps?width=100%25&amp;height=400&amp;hl=en&amp;q=Hyderabad,Sindh,Pakistan&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" width="100%">
+</iframe>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-surface-dim relative bottom-0 w-full border-t border-white/5">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-desktop py-gutter gap-unit w-full max-w-container-max mx-auto">
+<span class="font-headline-lg text-headline-lg text-on-surface">NOVAARC</span>
+<div class="flex gap-gutter font-label-mono text-label-mono text-tertiary">
+<a class="hover:text-secondary-container transition-colors duration-300" href="#">Tech Stack</a>
+<a class="hover:text-secondary-container transition-colors duration-300" href="#">Testimonials</a>
+<a class="hover:text-secondary-container transition-colors duration-300" href="#">Privacy</a>
+<a class="hover:text-secondary-container transition-colors duration-300" href="#">Terms</a>
+</div>
+<p class="font-label-mono text-label-mono text-tertiary">© 2025 NOVAARC DIGITAL AGENCY. ALL RIGHTS RESERVED.</p>
+</div>
+</footer>
+<a class="fixed bottom-margin-mobile right-margin-mobile z-[100] w-16 h-16 bg-[#25D366] rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition-transform duration-300" href="https://wa.me/03312359748">
+<svg class="w-8 h-8 fill-white" viewbox="0 0 24 24">
+<path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.181-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.522-2.961-2.638-.087-.117-.708-.941-.708-1.803 0-.862.452-1.285.613-1.46.161-.174.351-.219.468-.219.117 0 .234.001.336.005.107.004.25-.041.391.294.144.344.495 1.205.539 1.294.044.089.073.193.014.309-.059.117-.088.19-.175.293-.088.102-.185.228-.264.306-.088.087-.179.183-.077.359.102.175.454.748.974 1.21.67.596 1.233.782 1.408.87.175.088.278.073.38-.044.102-.117.439-.511.556-.687.117-.175.234-.146.395-.088.161.058 1.023.482 1.199.57.175.088.293.129.336.204.044.074.044.431-.1.836z"></path>
+</svg>
+</a>
+<script>
+        const cursor = document.getElementById('cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        document.querySelectorAll('a, button').forEach(el => {
+            el.addEventListener('mouseenter', () => cursor.classList.add('cursor-hover'));
+            el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-hover'));
+        });
+
+        document.querySelectorAll('.magnetic-btn').forEach(btn => {
+            btn.addEventListener('mousemove', (e) => {
+                const rect = btn.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+            });
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = `translate(0px, 0px)`;
+            });
+        });
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+    </script>
+</body></html>
