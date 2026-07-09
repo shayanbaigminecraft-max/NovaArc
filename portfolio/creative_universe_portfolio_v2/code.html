@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Shayan Baig | Cinematic Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&amp;family=Plus+Jakarta+Sans:wght@400;500&amp;family=Geist:wght@500&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=Plus+Jakarta+Sans:wght@100..900&amp;family=Syne:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-on-surface": "#313030",
+                    "on-primary": "#3c0091",
+                    "inverse-surface": "#e5e2e1",
+                    "tertiary": "#c6c6c7",
+                    "on-error-container": "#ffdad6",
+                    "surface": "#131313",
+                    "surface-container-highest": "#353534",
+                    "tertiary-fixed": "#e2e2e2",
+                    "on-secondary": "#002e6a",
+                    "outline-variant": "#494454",
+                    "tertiary-container": "#909191",
+                    "error": "#ffb4ab",
+                    "on-primary-fixed": "#23005c",
+                    "on-secondary-container": "#e6ecff",
+                    "secondary-container": "#0566d9",
+                    "on-tertiary": "#2f3131",
+                    "on-secondary-fixed": "#001a42",
+                    "on-tertiary-container": "#282a2a",
+                    "on-primary-fixed-variant": "#5516be",
+                    "on-error": "#690005",
+                    "surface-bright": "#3a3939",
+                    "on-secondary-fixed-variant": "#004395",
+                    "surface-container-lowest": "#0e0e0e",
+                    "on-surface": "#e5e2e1",
+                    "primary-container": "#a078ff",
+                    "surface-container-high": "#2a2a2a",
+                    "on-background": "#e5e2e1",
+                    "surface-container-low": "#1c1b1b",
+                    "primary-fixed": "#e9ddff",
+                    "secondary-fixed-dim": "#adc6ff",
+                    "surface-container": "#201f1f",
+                    "on-tertiary-fixed-variant": "#454747",
+                    "secondary-fixed": "#d8e2ff",
+                    "on-surface-variant": "#cbc3d7",
+                    "surface-variant": "#353534",
+                    "primary": "#d0bcff",
+                    "on-primary-container": "#340080",
+                    "secondary": "#adc6ff",
+                    "surface-tint": "#d0bcff",
+                    "surface-dim": "#131313",
+                    "on-tertiary-fixed": "#1a1c1c",
+                    "background": "#131313",
+                    "primary-fixed-dim": "#d0bcff",
+                    "error-container": "#93000a",
+                    "outline": "#958ea0",
+                    "tertiary-fixed-dim": "#c6c6c7",
+                    "inverse-primary": "#6d3bd7"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "8px",
+                    "container-max": "1440px",
+                    "margin-mobile": "20px",
+                    "gutter": "32px",
+                    "margin-desktop": "80px"
+            },
+            "fontFamily": {
+                    "label-mono": ["Geist"],
+                    "headline-lg-mobile": ["Syne"],
+                    "display-xl": ["Syne"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Syne"]
+            },
+            "fontSize": {
+                    "label-mono": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "38px", "fontWeight": "700"}],
+                    "display-xl": ["84px", {"lineHeight": "90px", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #131313;
+            color: #e5e2e1;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .glass:hover {
+            background: rgba(255, 255, 255, 0.07);
+            border-color: rgba(208, 188, 255, 0.3);
+            box-shadow: 0 0 40px rgba(109, 59, 215, 0.15);
+        }
+
+        .holographic-text {
+            background: linear-gradient(
+                90deg, 
+                #d0bcff 0%, 
+                #adc6ff 25%, 
+                #ffffff 50%, 
+                #adc6ff 75%, 
+                #d0bcff 100%
+            );
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: holo-slide 5s linear infinite;
+        }
+
+        @keyframes holo-slide {
+            to { background-position: 200% center; }
+        }
+
+        .custom-cursor {
+            width: 24px;
+            height: 24px;
+            border: 1px solid rgba(208, 188, 255, 0.5);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.2s ease, background 0.3s ease;
+            mix-blend-mode: difference;
+        }
+
+        .hover-active .custom-cursor {
+            transform: scale(2.5);
+            background: rgba(208, 188, 255, 0.1);
+        }
+
+        .glow-sphere {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(109, 59, 215, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(40px);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .scroll-reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md selection:bg-primary-container selection:text-on-primary-container">
+<div class="custom-cursor hidden md:block"></div>
+<!-- Background Engine -->
+<!-- STITCH_THREEJS_START:ANIMATION_18 class="fixed inset-0 w-full h-full z-0 opacity-40" -->
+<div class="fixed inset-0 w-full h-full z-0 opacity-40" style="display:block;">
+<script src="https://ajax.googleapis.com/ajax/libs/threejs/r125/three.min.js"></script>
+<div id="threejs-container-ANIMATION_18" style="width:100%;height:100%"></div>
+<script>
+(function() {
+  const container = document.getElementById('threejs-container-ANIMATION_18');
+  const devicePixelRatio = window.devicePixelRatio || 1;
+  (function() {
+  const container = document.getElementById('threejs-container-ANIMATION_18');
+  const width = container.clientWidth || window.innerWidth;
+  const height = container.clientHeight || window.innerHeight;
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 2000);
+  const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+  renderer.setSize(width, height);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  container.appendChild(renderer.domElement);
+
+  // 1. GALAXY BACKGROUND (Tier 4 Particles)
+  const particlesCount = 8000;
+  const posArray = new Float32Array(particlesCount * 3);
+  for (let i = 0; i < particlesCount * 3; i++) {
+    posArray[i] = (Math.random() - 0.5) * 100;
+  }
+  const particlesGeometry = new THREE.BufferGeometry();
+  particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+  const particlesMaterial = new THREE.PointsMaterial({
+    size: 0.015,
+    color: 0x8b5cf6, // Brand Purple
+    transparent: true,
+    opacity: 0.4,
+    blending: THREE.AdditiveBlending
+  });
+  const starField = new THREE.Points(particlesGeometry, particlesMaterial);
+  scene.add(starField);
+
+  // 2. CREATIVE WORLDS (Grouped Hierarchies)
+  const universe = new THREE.Group();
+  scene.add(universe);
+
+  // WORLD 1: VIDEO EDITING (Geometric abstraction)
+  const videoWorld = new THREE.Group();
+  videoWorld.position.set(0, 0, -50);
+  for(let i=0; i<12; i++) {
+    const mesh = new THREE.Mesh(
+      new THREE.PlaneGeometry(8, 4.5),
+      new THREE.MeshPhongMaterial({ color: 0x3b82f6, transparent: true, opacity: 0.2, side: THREE.DoubleSide, wireframe: i%2===0 })
+    );
+    mesh.position.set(Math.random()*40-20, Math.random()*20-10, Math.random()*20-10);
+    mesh.rotation.y = Math.random() * Math.PI;
+    videoWorld.add(mesh);
+  }
+  universe.add(videoWorld);
+
+  // WORLD 2: AI LAB (Neural core)
+  const aiWorld = new THREE.Group();
+  aiWorld.position.set(0, -60, -150);
+  const core = new THREE.Mesh(
+    new THREE.IcosahedronGeometry(10, 2),
+    new THREE.MeshPhongMaterial({ color: 0x8b5cf6, wireframe: true })
+  );
+  aiWorld.add(core);
+  universe.add(aiWorld);
+
+  // 3. LIGHTING
+  const ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
+  scene.add(ambientLight);
+  const pointLight = new THREE.PointLight(0x8b5cf6, 2, 500);
+  pointLight.position.set(50, 50, 50);
+  scene.add(pointLight);
+
+  camera.position.z = 20;
+
+  // 4. MOUSE & SCROLL TRACKING
+  let mouseX = 0, mouseY = 0;
+  window.addEventListener('mousemove', (e) => {
+    mouseX = (e.clientX / window.innerWidth) - 0.5;
+    mouseY = (e.clientY / window.innerHeight) - 0.5;
+  });
+
+  let scrollY = 0;
+  window.addEventListener('scroll', () => {
+    scrollY = window.scrollY;
+  });
+
+  function animate() {
+    requestAnimationFrame(animate);
+    
+    // Smooth cinematic camera
+    const targetZ = 20 - scrollY * 0.1;
+    camera.position.z += (targetZ - camera.position.z) * 0.05;
+    camera.position.x += (mouseX * 5 - camera.position.x) * 0.05;
+    camera.position.y += (-mouseY * 5 - camera.position.y) * 0.05;
+    camera.lookAt(new THREE.Vector3(0, -scrollY * 0.1, -scrollY * 0.2));
+
+    starField.rotation.y += 0.0005;
+    core.rotation.y += 0.01;
+    
+    renderer.render(scene, camera);
+  }
+
+  window.addEventListener('resize', () => {
+    const w = container.clientWidth || window.innerWidth;
+    const h = container.clientHeight || window.innerHeight;
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+    renderer.setSize(w, h);
+  });
+
+  animate();
+})();
+})();
+</script>
+</div>
+<!-- STITCH_THREEJS_END:ANIMATION_18 -->
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 left-0 w-full z-50 p-margin-mobile md:p-margin-desktop flex justify-start items-center">
+<button
+class="glass p-3 rounded-full flex items-center justify-center hover:scale-95 transition-transform group"
+onclick="window.location.href='../../index.html'">
+
+    <span class="material-symbols-outlined text-primary group-hover:text-on-surface">
+        arrow_back
+    </span>
+
+</button>
+</header>
+<main class="relative z-10">
+<!-- Hero Section -->
+<section class="min-h-screen flex flex-col justify-center items-center px-margin-mobile md:px-margin-desktop text-center">
+<div class="glow-sphere top-1/4 left-1/4"></div>
+<div class="glow-sphere bottom-1/4 right-1/4"></div>
+<div class="mb-6">
+<span class="font-label-mono text-label-mono uppercase tracking-[0.3em] text-primary/80 block mb-4">NOVAARC © 2025</span>
+<h1 class="font-display-xl text-[64px] md:text-display-xl holographic-text leading-tight md:leading-none">
+                   NOVAARC
+                </h1>
+<p class="mt-8 max-w-2xl mx-auto font-body-md text-on-surface-variant text-lg md:text-xl leading-relaxed">
+                    Cinematic Director &amp; AI Creative Architect. Building sensory digital experiences that bridge the gap between imagination and reality.
+                </p>
+</div>
+<a class="mt-12 glass px-8 py-4 rounded-full font-label-mono text-label-mono uppercase tracking-widest hover:bg-primary/10 transition-all flex items-center gap-2" href="#portfolio">
+                Explore Universe <span class="material-symbols-outlined">expand_more</span>
+</a>
+</section>
+<!-- Portfolio Section -->
+<section class="py-32 px-margin-mobile md:px-margin-desktop max-w-[1600px] mx-auto" id="portfolio">
+<div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+<div class="max-w-xl">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-6">SELECTED WORKS</h2>
+<p class="text-on-surface-variant">A modular collection of visual narratives, interactive portals, and cinematic experiments.</p>
+</div>
+<div class="font-label-mono text-label-mono text-primary/60">SCROLL TO DISCOVER</div>
+</div>
+<!-- Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter auto-rows-[250px] md:auto-rows-[350px]">
+<!-- Project 1: AI Video (Vertical) -->
+<!-- ADD YOUR PROJECT HERE -->
+<div class="md:col-span-4 md:row-span-2 glass rounded-xl overflow-hidden relative group cursor-pointer scroll-reveal">
+<video
+class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+autoplay
+muted
+loop
+playsinline>
+
+    <source src="work/toyata edits.mp4" type="video/mp4">
+
+</video>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-60"></div>
+<div class="absolute bottom-0 left-0 w-full p-8 z-10">
+<span class="bg-primary/20 backdrop-blur-md border border-primary/30 px-3 py-1 rounded text-[10px] font-label-mono text-primary uppercase mb-3 inline-block">VIDEO EDITING</span>
+<h3 class="font-headline-lg-mobile text-2xl mb-1">Professional Edits</h3>
+<p class="text-on-surface-variant font-label-mono text-[11px] uppercase tracking-wider">Strategic Reels Marketing  </p>
+</div>
+</div>
+<!-- Project 2: Cinematic Video (Horizontal Wide) -->
+<!-- ADD YOUR PROJECT HERE -->
+<div class="md:col-span-8 md:row-span-1 glass rounded-xl overflow-hidden relative group cursor-pointer scroll-reveal">
+<video
+class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+autoplay
+muted
+loop
+playsinline>
+
+    <source src="work/edited the capital luxury .mp4" type="video/mp4">
+
+</video>
+<div class="absolute inset-0 bg-gradient-to-t from-surface/80 to-transparent"></div>
+<div class="absolute bottom-0 left-0 w-full p-8 z-10 flex justify-between items-end">
+<div>
+<h3 class="font-headline-lg-mobile text-2xl mb-1">3d Realistic Videos </h3>
+<p class="text-on-surface-variant font-label-mono text-[11px] uppercase tracking-wider">Cinematography / VFX / 3d Animate / AI-Content Generation</p>
+</div>
+<span class="material-symbols-outlined text-primary text-4xl opacity-0 group-hover:opacity-100 transition-opacity">play_circle</span>
+</div>
+</div>
+<!-- Project 3: Branding (Square) -->
+<!-- ADD YOUR PROJECT HERE -->
+<div class="md:col-span-4 md:row-span-1 glass rounded-xl overflow-hidden relative group cursor-pointer scroll-reveal">
+<div class="absolute inset-0 z-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="A square 1:1 minimalist branding poster design featuring abstract liquid metallic shapes in a void, deep violet and electric blue gradients, sharp typography overlays, high-end editorial graphic design with a futuristic aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBZUZQqe6ZboSn6mtatR9_ZmiTjApOabisNuglEio-ANr43n-D5-F8ZzYqHQyZP1UNRXV8qRs-ZjEhxx4M0MxhfFpdFfcZSu2xXILFxuXlLOzyk0v3r90x4dK4JfAb-Fn1Q3jbJohbZYt7m2KrkaGGn9nMKr2xw91b6U-6erm9u-NGP_1rcioRfbT0IEL27swpJ9-B7ZmoScSLuq3eZy6ntcoAWoBK4bxNbJvjb2SSl_rL04Vn0kA_0')"></div>
+<div class="absolute inset-0 bg-surface/40 group-hover:bg-transparent transition-colors"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="text-center opacity-0 group-hover:opacity-100 transition-opacity">
+<h3 class="font-label-mono text-lg uppercase tracking-widest">LIQUID IDENTITY</h3>
+<div class="h-px w-12 bg-primary mx-auto mt-2"></div>
+</div>
+</div>
+</div>
+<!-- Project 4: Interaction (Horizontal) -->
+<!-- ADD YOUR PROJECT HERE -->
+<div class="md:col-span-4 md:row-span-1 glass rounded-xl overflow-hidden relative group cursor-pointer scroll-reveal">
+<div class="absolute inset-0 z-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="A close-up shot of a transparent glass interface floating in the air, glowing data points and violet light streaks, high-tech interactive UI design showcase, blurred dark studio background with soft purple rim lighting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCGcPb3w_W0gzq4xh__tnU6IcXUaU1ZxoBy0m-6o9-jqrQfDyGSbS9Eboku3SLADwjjaIY8Xw9HTTeI1qjAw5pxxf5a2Ccfl6rDDN6wJMk_BRE6ISajA1wWx-TbIOFzsRU3_a-vqUCWq915sYwqFEK37PTmCC1oV_2RRfcMRQiG1CJtO2T2EjWzsoBuqAXp-HtLyMWQ3Q-5Ye8d6hKSWd0y9Lp1yRz0xorc_RtONQxmO06w5uUjCU_N')"></div>
+<div class="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent mix-blend-overlay"></div>
+<div class="absolute bottom-6 left-6 z-10">
+<h3 class="font-label-mono text-sm uppercase tracking-widest">UX/UI ARCHIVE</h3>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA / Footer -->
+<footer class="py-40 px-margin-mobile md:px-margin-desktop text-center relative overflow-hidden">
+<div class="glow-sphere bottom-[-200px] left-1/2 -translate-x-1/2"></div>
+<div class="scroll-reveal">
+<h2 class="font-headline-lg-mobile md:font-headline-lg mb-12">LET'S CREATE THE UNSEEN.</h2>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="glass px-10 py-5 rounded-full font-label-mono tracking-widest hover:border-primary transition-all" href="mailto:hello@shayanbaig.com">HIRE ME</a>
+<div class="flex gap-4">
+<a class="glass w-14 h-14 rounded-full flex items-center justify-center hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">share</span>
+</a>
+<a class="glass w-14 h-14 rounded-full flex items-center justify-center hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">alternate_email</span>
+</a>
+</div>
+</div>
+</div>
+<div class="mt-40 pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 opacity-40 font-label-mono text-[10px] tracking-[0.2em]">
+<div>DESIGNED &amp; DEVELOPED BY SHAYAN BAIG</div>
+<div class="flex gap-8">
+<span>INSTAGRAM</span>
+<span>BEHANCE</span>
+<span>VIMEO</span>
+</div>
+<div>© 2024 ALL RIGHTS RESERVED</div>
+</div>
+</footer>
+</main>
+<script>
+        // Custom Cursor Logic
+        const cursor = document.querySelector('.custom-cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        const interactables = document.querySelectorAll('.glass, a, button');
+        interactables.forEach(el => {
+            el.addEventListener('mouseenter', () => document.body.classList.add('hover-active'));
+            el.addEventListener('mouseleave', () => document.body.classList.remove('hover-active'));
+        });
+
+        // Scroll Reveal Logic
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+
+        // Smooth Scroll Micro-interaction
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Atmospheric parallax on mouse move
+        document.addEventListener('mousemove', (e) => {
+            const moveX = (e.clientX - window.innerWidth / 2) * 0.01;
+            const moveY = (e.clientY - window.innerHeight / 2) * 0.01;
+            
+            const spheres = document.querySelectorAll('.glow-sphere');
+            spheres.forEach((sphere, index) => {
+                const factor = (index + 1) * 0.5;
+                sphere.style.transform = `translate(${moveX * factor}px, ${moveY * factor}px)`;
+            });
+        });
+    </script>
+</body></html>
